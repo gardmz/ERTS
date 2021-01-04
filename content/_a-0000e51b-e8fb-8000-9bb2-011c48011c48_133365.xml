@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>_a-0000e51b-e8fb-8000-9bb2-011c48011c48_133368</versionUuid>
+    <constant>
+        <name>ERTS2_FIELD_DISPLAY_NAMES</name>
+        <uuid>_a-0000e51b-e8fb-8000-9bb2-011c48011c48_133365</uuid>
+        <description>Constant storing all of the field display names from the CDT. Used to check for changes to the CDT. Parallel to the FIELD_NAMES and FIELD_TYPES constants. [Activity History]</description>
+        <parentUuid>c711cbf5-0cef-4490-924c-4bbef98b1359</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <typedValue>
+            <type>
+                <name>Text?list</name>
+                <namespace>http://www.appian.com/ae/types/2009</namespace>
+            </type>
+            <value>
+                <el>Title</el>
+                <el>Status</el>
+                <el>Priority</el>
+                <el>Start Date</el>
+                <el>Completion Date</el>
+                <el>Cost/Schedule</el>
+                <el>Request Description</el>
+                <el>Requester Information</el>
+                <el>Support Group</el>
+                <el>Engineer Assigned To</el>
+                <el>Engineering Supervisor Assigned</el>
+                <el>Project Number</el>
+                <el>Parent Project</el>
+            </value>
+        </typedValue>
+        <isEnvironmentSpecific>false</isEnvironmentSpecific>
+    </constant>
+    <roleMap public="false">
+        <role inherit="true" allowForAll="false" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+    <history>
+        <historyInfo versionUuid="_a-0000e51b-e8fb-8000-9bb2-011c48011c48_133368"/>
+    </history>
+</contentHaul>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<tempoFeedHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>2ebae81d-f016-45c1-a04d-504d3e40dda1</versionUuid>
+    <tempoFeed>
+        <uuid>6d8cf448-a36b-4436-95c0-4f2bee706ed1</uuid>
+        <name>Engineering Request Tracking System</name>
+        <description>Feed for updates about Projects</description>
+        <showInCatalog>true</showInCatalog>
+        <systemFeed>false</systemFeed>
+    </tempoFeed>
+    <roleMap>
+        <role name="administrator">
+            <users/>
+            <groups>
+                <groupUuid>_e-0000e51b-e8fb-8000-9afe-01075c01075c_362</groupUuid>
+            </groups>
+        </role>
+    </roleMap>
+    <history>
+        <historyInfo versionUuid="2ebae81d-f016-45c1-a04d-504d3e40dda1"/>
+    </history>
+</tempoFeedHaul>

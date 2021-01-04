@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>_a-0000e56f-5824-8000-9bb5-011c48011c48_137630</versionUuid>
+    <rule>
+        <name>ERTS2_QuadChart</name>
+        <uuid>_a-0000e51b-e8fb-8000-9bb2-011c48011c48_135043</uuid>
+        <description>interface dedicated to displaying quad chart information for a specific project</description>
+        <parentUuid>c711cbf5-0cef-4490-924c-4bbef98b1359</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>{
+  #"SYSTEM_SYSRULES_cardLayout"(
+    contents: {
+      #"SYSTEM_SYSRULES_columnsLayout"(
+        columns: {
+          #"SYSTEM_SYSRULES_columnLayout"(
+            contents: {
+              #"SYSTEM_SYSRULES_cardLayout"(
+                contents: {
+                  #"SYSTEM_SYSRULES_sectionLayout_v1"(
+                    label: "",
+                    contents: {
+                      #"SYSTEM_SYSRULES_richTextDisplayField"(
+                        label: "",
+                        labelPosition: "COLLAPSED",
+                        value: {
+                          #"SYSTEM_SYSRULES_richTextHeader"(
+                            text: {
+                              "Project Summary"
+                            }
+                          )
+                        },
+                        align: "CENTER"
+                      )
+                    },
+                    divider: "BELOW",
+                    marginBelow: "STANDARD"
+                  ),
+                  #"SYSTEM_SYSRULES_columnsLayout"(
+                    columns: {
+                      #"SYSTEM_SYSRULES_columnLayout"(
+                        contents: {
+                          #"SYSTEM_SYSRULES_textField"(
+                            label: "Title",
+                            labelPosition: "ABOVE",
+                            value: ri!project.title,
+                            saveInto: {},
+                            refreshAfter: "UNFOCUS",
+                            readOnly: true,
+                            validations: {}
+                          ),
+
+                          #"SYSTEM_SYSRULES_textField"(
+                            label: "Support Group",
+                            labelPosition: "ABOVE",
+                            helpTooltip: "Shop/flight",
+                            value: ri!project.supportGroup,
+                            saveInto: {},
+                            refreshAfter: "UNFOCUS",
+                            readOnly: true,
+                            validations: {}
+                          ),
+                          #"SYSTEM_SYSRULES_paragraphField"(
+                            label: "Description",
+                            labelPosition: "ABOVE",
+                            value: ri!project.requestDescription,
+                            saveInto: {},
+                            refreshAfter: "UNFOCUS",
+                            readOnly: true,
+                            height: "MEDIUM",
+                            validations: {}
+                          ),
+                          #"SYSTEM_SYSRULES_textField"(
+                            label: "Cost/Schedule",
+                            labelPosition: "ABOVE",
+                            value: ri!project.costschedule.value,
+                            saveInto: {},
+                            refreshAfter: "UNFOCUS",
+                            readOnly: true,
+                            validations: {}
+                          )
+                        }
+                      ),
+                      #"SYSTEM_SYSRULES_columnLayout"(
+                        contents: {
+                          #"SYSTEM_SYSRULES_sideBySideLayout"(
+                            items: {
+
+                              #"SYSTEM_SYSRULES_sideBySideItem"(
+                                item: #"SYSTEM_SYSRULES_imageField_v1"(
+                                  label: "",
+                                  labelPosition: "COLLAPSED",
+                                  images: {
+                                    #"SYSTEM_SYSRULES_userImage"(
+                                      user: loggedInUser()
+                                    )
+                                  },
+                                  size: "TINY",
+                                  isThumbnail: false,
+                                  style: "AVATAR"
+                                ),
+                                width: "MINIMIZE"
+                              ),
+                              #"SYSTEM_SYSRULES_sideBySideItem"(
+                                item: #"SYSTEM_SYSRULES_textField"(
+                                  label: "Engineer Supervisor",
+                                  labelPosition: "ABOVE",
+                                  value: #"bed2e622-6da6-4228-8de0-138b7baa05d8_FORMATNAME"(username: ri!project.engineeringSupervisorAssigned),
+                                  saveInto: {},
+                                  refreshAfter: "UNFOCUS",
+                                  readOnly: true,
+                                  validations: {}
+                                )
+                              )
+                            }
+                          ),
+                          #"SYSTEM_SYSRULES_sideBySideLayout"(
+                            items: {
+
+                              #"SYSTEM_SYSRULES_sideBySideItem"(
+                                item: #"SYSTEM_SYSRULES_imageField_v1"(
+                                  label: "",
+                                  labelPosition: "COLLAPSED",
+                                  images: {
+                                    #"SYSTEM_SYSRULES_userImage"(
+                                      user: loggedInUser()
+                                    )
+                                  },
+                                  size: "TINY",
+                                  isThumbnail: false,
+                                  style: "AVATAR"
+                                ),
+                                width: "MINIMIZE"
+                              ),
+                              #"SYSTEM_SYSRULES_sideBySideItem"(
+                                item: #"SYSTEM_SYSRULES_textField"(
+                                  label: "Engineer",
+                                  labelPosition: "ABOVE",
+                                  value: #"bed2e622-6da6-4228-8de0-138b7baa05d8_FORMATNAME"(username: ri!project.engineerAssignedTo),
+                                  saveInto: {},
+                                  refreshAfter: "UNFOCUS",
+                                  readOnly: true,
+                                  validations: {}
+                                )
+                              )
+                            }
+                          ),
+                          
+                          #"SYSTEM_SYSRULES_integerField"(
+                            label: "Project Number",
+                            labelPosition: "ABOVE",
+                            value: ri!project.id,
+                            saveInto: {},
+                            readOnly: true,
+                            validations: {}
+                          )
+                        }
+                      )
+                    }
+                  ),
+                  #"SYSTEM_SYSRULES_textField"(
+                    label: "Priority",
+                    labelPosition: "ABOVE",
+                    value: ri!project.priority.value,
+                    saveInto: {},
+                    refreshAfter: "UNFOCUS",
+                    readOnly: true,
+                    validations: {}
+                  )
+                },
+                style: "NONE",
+                height: "TALL",
+                marginBelow: "STANDARD"
+              ),
+              #"SYSTEM_SYSRULES_cardLayout"(
+                contents: {
+                  #"SYSTEM_SYSRULES_sectionLayout_v1"(
+                    label: "",
+                    contents: {
+                      #"SYSTEM_SYSRULES_richTextDisplayField"(
+                        label: "",
+                        labelPosition: "COLLAPSED",
+                        value: {
+                          #"SYSTEM_SYSRULES_richTextHeader"(
+                            text: {
+                              "Schedule/Implmentation Plan"
+                            }
+                          )
+                        },
+                        align: "CENTER"
+                      )
+                    },
+                    divider: "BELOW",
+                    marginBelow: "STANDARD"
+                  ),
+                  #"SYSTEM_SYSRULES_columnsLayout"(
+                    columns: {
+                      #"SYSTEM_SYSRULES_columnLayout"(
+                        contents: {
+                          #"SYSTEM_SYSRULES_textField"(
+                            label: "Title",
+                            labelPosition: "ABOVE",
+                            value: ri!project.title,
+                            saveInto: {},
+                            refreshAfter: "UNFOCUS",
+                            readOnly: true,
+                            validations: {}
+                          )
+                        }
+                      ),
+                      #"SYSTEM_SYSRULES_columnLayout"(
+                        contents: {
+                          #"SYSTEM_SYSRULES_dateField"(
+                            label: "Start Date",
+                            labelPosition: "ABOVE",
+                            value: ri!project.startDate,
+                            saveInto: {},
+                            readOnly: true,
+                            validations: {}
+                          )
+                        }
+                      ),
+                      #"SYSTEM_SYSRULES_columnLayout"(
+                        contents: {
+                          #"SYSTEM_SYSRULES_dateField"(
+                            label: "Completion Date",
+                            labelPosition: "ABOVE",
+                            value: ri!project.completionDate,
+                            saveInto: {},
+                            readOnly: true,
+                            validations: {}
+                          )
+                        }
+                      )
+                    }
+                  )
+                },
+                style: "NONE",
+                height: "TALL",
+                marginBelow: "STANDARD"
+              )
+            }
+          ),
+          #"SYSTEM_SYSRULES_columnLayout"(
+            contents: {
+              #"SYSTEM_SYSRULES_cardLayout"(
+                contents: {
+                  #"SYSTEM_SYSRULES_sectionLayout_v1"(
+                    label: "",
+                    contents: {
+                      #"SYSTEM_SYSRULES_richTextDisplayField"(
+                        label: "",
+                        labelPosition: "COLLAPSED",
+                        value: {
+                          #"SYSTEM_SYSRULES_richTextHeader"(
+                            text: {
+                              "PROJECT IMAGE"
+                            }
+                          )
+                        },
+                        align: "CENTER"
+                      )
+                    },
+                    divider: "BELOW",
+                    marginBelow: "STANDARD"
+                  ),
+                  #"SYSTEM_SYSRULES_imageField_v1"(
+                    label: "Image",
+                    labelPosition: "COLLAPSED",
+                    images: {
+                      #"SYSTEM_SYSRULES_documentImage"(
+                        document: #"_a-0000e56f-5824-8000-9bb5-011c48011c48_136821"
+                      )
+                    },
+                    size: "FIT",
+                    isThumbnail: false,
+                    style: "STANDARD",
+                    align: "CENTER"
+                  )
+                },
+                style: "NONE",
+                height: "TALL",
+                marginBelow: "STANDARD"
+              ),
+              #"SYSTEM_SYSRULES_cardLayout"(
+                contents: {
+                  #"SYSTEM_SYSRULES_sectionLayout_v1"(
+                    label: "",
+                    contents: {
+                      #"SYSTEM_SYSRULES_richTextDisplayField"(
+                        label: "",
+                        labelPosition: "COLLAPSED",
+                        value: {
+                          #"SYSTEM_SYSRULES_richTextHeader"(
+                            text: {
+                              "Issues"
+                            }
+                          )
+                        },
+                        align: "CENTER"
+                      )
+                    },
+                    divider: "BELOW",
+                    marginBelow: "STANDARD"
+                  ),
+                  #"SYSTEM_SYSRULES_columnsLayout"(
+                    columns: {
+                      #"SYSTEM_SYSRULES_columnLayout"(
+                        contents: {
+                          #"SYSTEM_SYSRULES_textField"(
+                            label: "Text",
+                            labelPosition: "ABOVE",
+                            saveInto: {},
+                            refreshAfter: "UNFOCUS",
+                            validations: {}
+                          )
+                        }
+                      )
+                    }
+                  ),
+                  #"SYSTEM_SYSRULES_ButtonArrayLayout"(
+                    buttons: {
+                      #"SYSTEM_SYSRULES_ButtonWidget"(
+                        label: "Submit",
+                        style: "NORMAL"
+                      )
+                    },
+                    align: "START"
+                  )
+                },
+                style: "NONE",
+                height: "TALL",
+                marginBelow: "STANDARD"
+              )
+            }
+          )
+        }
+      )
+    },
+    style: "#cccccc",
+    height: "AUTO",
+    marginBelow: "STANDARD"
+  )
+}</definition>
+        <namedTypedValue>
+            <name>project</name>
+            <type>
+                <name>ERTS2_Project</name>
+                <namespace>urn:com:appian:types:ERTS2</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>projectUser</name>
+            <type>
+                <name>ERTS2_Project</name>
+                <namespace>urn:com:appian:types:ERTS2</namespace>
+            </type>
+        </namedTypedValue>
+        <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+    </rule>
+    <roleMap public="true">
+        <role inherit="true" allowForAll="false" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+    <history>
+        <historyInfo versionUuid="_a-0000e56f-5824-8000-9bb5-011c48011c48_137630"/>
+    </history>
+</contentHaul>

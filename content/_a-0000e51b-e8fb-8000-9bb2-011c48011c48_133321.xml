@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>_a-0000e51b-e8fb-8000-9bb2-011c48011c48_133719</versionUuid>
+    <rule>
+        <name>ERTS2_ProjectDashboard</name>
+        <uuid>_a-0000e51b-e8fb-8000-9bb2-011c48011c48_133321</uuid>
+        <description>Dashboard interface for the summary view of the Projects record type [Records]</description>
+        <parentUuid>c711cbf5-0cef-4490-924c-4bbef98b1359</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>a!localVariables(
+  local!record: #"d15f8f05-7f93-437b-8b33-be6c08127dcb_GETONERECORD"(ri!id),
+  {
+    #"_a-0000e51b-e8fb-8000-9bb2-011c48011c48_133309"(
+      record: local!record,
+      creating: false,
+      readOnly: true,
+      documents: if(
+        isnull(local!record.folderId),
+        {},
+        folder(local!record.folderId, "documentChildren")
+      )
+    ),
+    #"_a-0000e51b-e8fb-8000-9bb2-011c48011c48_133313"(ri!id)
+  }
+)</definition>
+        <namedTypedValue>
+            <name>id</name>
+            <type>
+                <name>int</name>
+                <namespace>http://www.w3.org/2001/XMLSchema</namespace>
+            </type>
+        </namedTypedValue>
+        <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+    </rule>
+    <roleMap public="true">
+        <role inherit="true" allowForAll="false" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+    <history>
+        <historyInfo versionUuid="_a-0000e51b-e8fb-8000-9bb2-011c48011c48_133719"/>
+    </history>
+</contentHaul>

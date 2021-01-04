@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="urn:com:appian:types:ERTS2"
+  xmlns:tns="urn:com:appian:types:ERTS2" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:include schemaLocation="%7Burn%3Acom%3Aappian%3Atypes%3AERTS2%7DERTS2_Costschedule.xsd"/>
+  <xsd:include schemaLocation="%7Burn%3Acom%3Aappian%3Atypes%3AERTS2%7DERTS2_Priority.xsd"/>
+  <xsd:include schemaLocation="%7Burn%3Acom%3Aappian%3Atypes%3AERTS2%7DERTS2_Status.xsd"/>
+  <xsd:complexType name="ERTS2_Project">
+    <xsd:annotation>
+      <xsd:appinfo source="appian.jpa">@Table(name="qckapp_erts2_main")</xsd:appinfo>
+      <xsd:appinfo source="http://www.appian.com/ae/types/2009">
+        <ns2:Metadata xmlns:ns2="http://www.appian.com/ae/types/2009">
+          <ns2:versionUuid>0000e55d-28a5-8000-fd23-7f0000014e7a</ns2:versionUuid>
+          <ns2:history>
+            <ns2:historyInfo versionUuid="0000e55d-28a5-8000-fd23-7f0000014e7a"/>
+          </ns2:history>
+        </ns2:Metadata>
+      </xsd:appinfo>
+      <xsd:documentation><![CDATA[Base data structure for a single Projectrecord]]></xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="id" nillable="true" type="xsd:int">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@Id @GeneratedValue</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="title" nillable="true" type="xsd:string">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@Column(name="title")</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="status" nillable="true" type="tns:ERTS2_Status">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@JoinColumn(name="status") @ManyToOne(cascade=REFRESH)</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="priority" nillable="true" type="tns:ERTS2_Priority">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@JoinColumn(name="priority") @ManyToOne(cascade=REFRESH)</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="startDate" nillable="true" type="xsd:date">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@Column(name="startdate")</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="completionDate" nillable="true" type="xsd:date">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@Column(name="completiondate")</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="costschedule" nillable="true" type="tns:ERTS2_Costschedule">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@JoinColumn(name="costschedule") @ManyToOne(cascade=REFRESH)</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="requestDescription" nillable="true" type="xsd:string">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@Column(name="requestdescription")</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="requesterInformation" nillable="true" type="xsd:string">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@Column(name="requesterinformation")</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="supportGroup" nillable="true" type="xsd:string">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@Column(name="supportgroup")</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="engineerAssignedTo" nillable="true" type="xsd:string">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@Column(name="engineerassignedto")</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="engineeringSupervisorAssigned" nillable="true" type="xsd:string">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@Column(name="engineeringsupervisorassrpx")</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="projectNumber" nillable="true" type="xsd:double">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@Column(name="projectnumber")</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="parentProject" nillable="true" type="xsd:int">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@Column(name="parentproject")</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="folderId" nillable="true" type="xsd:int"/>
+      <xsd:element name="createdBy" nillable="true" type="xsd:string"/>
+      <xsd:element name="createdOn" nillable="true" type="xsd:dateTime"/>
+      <xsd:element name="updatedBy" nillable="true" type="xsd:string"/>
+      <xsd:element name="updatedOn" nillable="true" type="xsd:dateTime"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

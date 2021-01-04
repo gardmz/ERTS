@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>_a-0000e56f-5824-8000-9bb5-011c48011c48_135792</versionUuid>
+    <rule>
+        <name>ERTS2_AddUser</name>
+        <uuid>_a-0000e51b-e8fb-8000-9bb2-011c48011c48_135138</uuid>
+        <description>This interface will allow administrators to add new users into the system and assign the user a role</description>
+        <parentUuid>c711cbf5-0cef-4490-924c-4bbef98b1359</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>#"SYSTEM_SYSRULES_formLayout_v1"(
+  label: "Add New User",
+  contents: {
+    #"SYSTEM_SYSRULES_sectionLayout_v1"(
+      contents: {
+        #"SYSTEM_SYSRULES_columnsLayout"(
+          columns: {
+            #"SYSTEM_SYSRULES_columnLayout"(
+              contents: {
+                #"SYSTEM_SYSRULES_textField"(
+                  label: "First Name",
+                  labelPosition: "ABOVE",
+                  saveInto: {},
+                  refreshAfter: "UNFOCUS",
+                  required: true,
+                  validations: {}
+                )
+              }
+            ),
+            #"SYSTEM_SYSRULES_columnLayout"(
+              contents: {
+                #"SYSTEM_SYSRULES_textField"(
+                  label: "Last Name",
+                  labelPosition: "ABOVE",
+                  saveInto: {},
+                  refreshAfter: "UNFOCUS",
+                  required: true,
+                  validations: {}
+                )
+              }
+            )
+          }
+        ),
+        #"SYSTEM_SYSRULES_textField"(
+          label: "Email Address",
+          labelPosition: "ABOVE",
+          saveInto: {},
+          refreshAfter: "UNFOCUS",
+          required: true,
+          validations: {}
+        )
+      }
+    ),
+    #"SYSTEM_SYSRULES_sectionLayout_v1"(
+      label: "",
+      contents: {
+        #"SYSTEM_SYSRULES_textField"(
+          label: "Username",
+          labelPosition: "ABOVE",
+          saveInto: {},
+          refreshAfter: "UNFOCUS",
+          required: true,
+          validations: {}
+        )
+      }
+    ),
+    #"SYSTEM_SYSRULES_textField"(
+      label: "Password",
+      labelPosition: "ABOVE",
+      saveInto: {},
+      refreshAfter: "UNFOCUS",
+      required: true,
+      validations: {}
+    ),
+    #"SYSTEM_SYSRULES_dropdownField"(
+      label: "Role",
+      labelPosition: "ABOVE",
+      placeholderLabel: "--- Select a Role ---",
+      choiceLabels: {"User", "Engineer",
+        "Supervisor",
+        "Administrator"},
+      choiceValues: {1, 2,
+        3,
+        4},
+      saveInto: {},
+      required: true,
+      validations: {}
+    )
+  },
+  buttons: #"SYSTEM_SYSRULES_ButtonLayout"(
+    primaryButtons: {
+      #"SYSTEM_SYSRULES_ButtonWidget"(
+        label: "Add User",
+        submit: true,
+        style: "PRIMARY"
+      )
+    },
+    secondaryButtons: {
+      #"SYSTEM_SYSRULES_ButtonWidget"(
+        label: "Cancel",
+        value: true,
+        saveInto: ri!cancel,
+        submit: true,
+        style: "NORMAL",
+        validate: false
+      )
+    }
+  )
+)</definition>
+        <namedTypedValue>
+            <name>cancel</name>
+            <type>
+                <name>boolean</name>
+                <namespace>http://www.w3.org/2001/XMLSchema</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>UserInfo</name>
+            <type>
+                <name>ERTS2_UserInfo</name>
+                <namespace>urn:com:appian:types</namespace>
+            </type>
+        </namedTypedValue>
+        <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+    </rule>
+    <roleMap public="true">
+        <role inherit="true" allowForAll="false" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+    <history>
+        <historyInfo versionUuid="_a-0000e56f-5824-8000-9bb5-011c48011c48_135792"/>
+    </history>
+</contentHaul>

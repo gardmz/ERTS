@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<dataStoreHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>_a-0000e51b-e8fb-8000-9bb2-011c48011c48_135171</versionUuid>
+    <dataStore>
+        <uuid>_a-0000e51b-e8fb-8000-9bb2-011c48011c48_135151</uuid>
+        <name>ERTS2 Users</name>
+        <description>This data store will hold user information (first name, last name, username, password, role)</description>
+        <dataSourceKey>jdbc/Appian</dataSourceKey>
+        <adaptingExplicitSqlNames>false</adaptingExplicitSqlNames>
+        <autoUpdateSchema>false</autoUpdateSchema>
+        <entities>
+            <entity>
+                <uuid>82058c5a-2002-4809-951d-e1fcf6132baa</uuid>
+                <name>ERTS2_UserInfo</name>
+                <type>{urn:com:appian:types}ERTS2_UserInfo</type>
+            </entity>
+        </entities>
+    </dataStore>
+    <isPublished>true</isPublished>
+    <roleMap>
+        <role inherit="false" allowForAll="false" name="administrators">
+            <users>
+                <userUuid>gz00166@georgiasouthern.edu</userUuid>
+                <userUuid>wd01248@georgiasouthern.edu</userUuid>
+                <userUuid>md17800@georgiasouthern.edu</userUuid>
+                <userUuid>hv00266@georgiasouthern.edu</userUuid>
+            </users>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="readers">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+    <history>
+        <historyInfo versionUuid="_a-0000e51b-e8fb-8000-9bb2-011c48011c48_135171"/>
+    </history>
+</dataStoreHaul>

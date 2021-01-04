@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>_a-0000e51b-e8fb-8000-9bb2-011c48011c48_135131</versionUuid>
+    <rule>
+        <name>ERTS2_CreateUpdateProject</name>
+        <uuid>_a-0000e51b-e8fb-8000-9bb2-011c48011c48_133317</uuid>
+        <description>Form interface for creating new Projects as an action or updating Projects as a related action [Records]</description>
+        <parentUuid>c711cbf5-0cef-4490-924c-4bbef98b1359</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>a!localVariables(
+ 
+  local!creating: a!refreshVariable(
+    value: isnull(ri!record),
+    refreshOnReferencedVarChange: false
+  ),
+  local!oldRecord: a!refreshVariable(
+    value: ri!record,
+    refreshOnReferencedVarChange: false
+  ),
+  local!oldDocuments: a!refreshVariable(
+    value: if(
+      isnull(ri!documents),
+      {},
+      ri!documents
+    ),
+    refreshOnReferencedVarChange: false
+  ),
+  #"SYSTEM_SYSRULES_formLayout_v1"(
+    label: if(
+      local!creating,
+      "Add New Project",
+      "Update Project"
+    ),
+    contents: {
+      #"_a-0000e51b-e8fb-8000-9bb2-011c48011c48_133309"(
+        record: ri!record,
+        creating: local!creating,
+        readOnly: false,
+        documents: ri!documents,
+        deletedDocuments: ri!deletedDocs
+      )
+    },
+    buttons: #"SYSTEM_SYSRULES_ButtonLayout"(
+      primaryButtons: {
+        if(
+          local!creating,
+          #"SYSTEM_SYSRULES_ButtonWidgetSubmit"(
+            label: "Submit Project",
+            saveInto: {
+              a!save(ri!record.createdOn, now()),
+              a!save(ri!record.createdBy, loggedInUser()),
+              a!save(ri!record.updatedOn, now()),
+              a!save(ri!record.updatedBy, loggedInUser()),
+              a!save(ri!documents, reject(fn!isnull, ri!documents))
+            },
+            style: "PRIMARY"
+          ),
+          #"SYSTEM_SYSRULES_ButtonWidgetSubmit"(
+            label: "Update Project",
+            saveInto: {
+              a!save(ri!record.updatedOn, now()),
+              a!save(ri!record.updatedBy, loggedInUser()),
+              a!save(ri!oldRecord, local!oldRecord),
+              a!save(ri!documents, reject(fn!isnull, ri!documents)),
+              a!save(ri!addedDocs, reject(fn!isnull, difference(ri!documents, local!oldDocuments))),
+              a!save(ri!oldDocs, local!oldDocuments)
+            },
+            style: "PRIMARY"
+          )
+        )
+      },
+      secondaryButtons: {
+        if(
+          local!creating,
+          {},
+          #"SYSTEM_SYSRULES_ButtonWidgetSubmit"(
+            label: "Cancel",
+            value: true,
+            saveInto: {
+              ri!cancel,
+              a!save(ri!addedDocs, reject(fn!isnull, difference(ri!documents, local!oldDocuments))),
+              a!save(ri!deletedDocs, append(difference(ri!deletedDocs, local!oldDocuments), ri!addedDocs))
+            },
+            style: "NORMAL",
+            skipValidation: true
+          )
+        )
+      }
+    )
+  )
+)</definition>
+        <namedTypedValue>
+            <name>record</name>
+            <type>
+                <name>ERTS2_Project</name>
+                <namespace>urn:com:appian:types:ERTS2</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>oldRecord</name>
+            <type>
+                <name>ERTS2_Project</name>
+                <namespace>urn:com:appian:types:ERTS2</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>documents</name>
+            <type>
+                <name>CollaborationDocument?list</name>
+                <namespace>http://www.appian.com/ae/types/2009</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>addedDocs</name>
+            <type>
+                <name>CollaborationDocument?list</name>
+                <namespace>http://www.appian.com/ae/types/2009</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>deletedDocs</name>
+            <type>
+                <name>CollaborationDocument?list</name>
+                <namespace>http://www.appian.com/ae/types/2009</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>oldDocs</name>
+            <type>
+                <name>CollaborationDocument?list</name>
+                <namespace>http://www.appian.com/ae/types/2009</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>cancel</name>
+            <type>
+                <name>boolean</name>
+                <namespace>http://www.w3.org/2001/XMLSchema</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>projectID</name>
+            <type>
+                <name>int</name>
+                <namespace>http://www.w3.org/2001/XMLSchema</namespace>
+            </type>
+        </namedTypedValue>
+        <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+    </rule>
+    <roleMap public="true">
+        <role inherit="true" allowForAll="false" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+    <history>
+        <historyInfo versionUuid="_a-0000e51b-e8fb-8000-9bb2-011c48011c48_135131"/>
+    </history>
+</contentHaul>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>_a-0000e51b-e8fb-8000-9bb2-011c48011c48_133808</versionUuid>
+    <folder>
+        <name>ERTS2 Message Attachments</name>
+        <uuid>14b41245-193e-4ce8-b017-6cc66afee95f_ATTACH</uuid>
+        <description>Folder to hold attachments for Tempo messages made through the Engineering Request Tracking System application [Document Management] [Collaboration]</description>
+        <parentUuid>6a17dbdb-b7a6-47f4-bf61-cb8c8380a6a6_KC</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+    </folder>
+    <roleMap public="true">
+        <role inherit="true" allowForAll="false" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+    <history>
+        <historyInfo versionUuid="_a-0000e51b-e8fb-8000-9bb2-011c48011c48_133808"/>
+    </history>
+</contentHaul>

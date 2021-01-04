@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<processModelFolderHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>_g-0000e51b-e8fb-8000-f9f7-7f0000014e7a_154</versionUuid>
+    <processModelFolder>
+        <name>ERTS2 Models</name>
+        <uuid>a84db70a-9d1b-4744-bd04-c54cc3572e69</uuid>
+        <description>Process models folder for the Engineering Request Tracking System application [Base]</description>
+    </processModelFolder>
+    <roleMap>
+        <role name="ADMIN_OWNER">
+            <users/>
+            <groups>
+                <groupUuid>_e-0000e51b-e8fb-8000-9afe-01075c01075c_362</groupUuid>
+            </groups>
+        </role>
+        <role name="EDITOR">
+            <users/>
+            <groups/>
+        </role>
+        <role name="EXPLICIT_NONMEMBER">
+            <users/>
+            <groups/>
+        </role>
+        <role name="VIEWER">
+            <users/>
+            <groups>
+                <groupUuid>_e-0000e51b-e8fb-8000-9afe-01075c01075c_364</groupUuid>
+            </groups>
+        </role>
+        <role name="MANAGER">
+            <users/>
+            <groups/>
+        </role>
+        <role name="INITIATOR">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+    <history>
+        <historyInfo versionUuid="_g-0000e51b-e8fb-8000-f9f7-7f0000014e7a_154"/>
+    </history>
+</processModelFolderHaul>

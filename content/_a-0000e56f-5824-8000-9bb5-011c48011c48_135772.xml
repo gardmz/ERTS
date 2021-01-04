@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>_a-0000e56f-5824-8000-9bb5-011c48011c48_135777</versionUuid>
+    <rulesFolder>
+        <name>User Rule Folder</name>
+        <uuid>_a-0000e56f-5824-8000-9bb5-011c48011c48_135772</uuid>
+        <description>This folder will hold rules for managing users within the system</description>
+        <parentUuid>SYSTEM_RULES_ROOT</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+    </rulesFolder>
+    <roleMap public="true">
+        <role inherit="false" allowForAll="false" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="administrators">
+            <users>
+                <userUuid>gz00166@georgiasouthern.edu</userUuid>
+                <userUuid>wd01248@georgiasouthern.edu</userUuid>
+                <userUuid>md17800@georgiasouthern.edu</userUuid>
+                <userUuid>hv00266@georgiasouthern.edu</userUuid>
+            </users>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+    <history>
+        <historyInfo versionUuid="_a-0000e56f-5824-8000-9bb5-011c48011c48_135777"/>
+    </history>
+</contentHaul>

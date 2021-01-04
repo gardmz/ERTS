@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>_a-0000e51b-e8fb-8000-9bb2-011c48011c48_135087</versionUuid>
+    <decision>
+        <name>ERTS2_determineProjectCostScheduleText</name>
+        <uuid>a42f8f09-03c2-4c8c-8ceb-9bfa2c14f971</uuid>
+        <description>used to determine the cost schedule aspect of project</description>
+        <parentUuid>c711cbf5-0cef-4490-924c-4bbef98b1359</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>fn!override_exception_appian_internal(fn!with(local!decisiondefinition: a!decisiondesigner_cache(uuid: "a42f8f09-03c2-4c8c-8ceb-9bfa2c14f971",versionKey: "e9d6c2bd-9139-453a-854b-a59d3b953608",value: #"SYSTEM_SYSRULES_dd_dd"('hitPolicy': #"SYSTEM_SYSRULES_dd_dhp"("UNIQUE"), 'inputs': {#"SYSTEM_SYSRULES_dd_di"('name': "ScheduleCost", 'type': 'type!{http://www.appian.com/ae/types/2009}Text', 'id': 1, 'restrictionType': #"SYSTEM_SYSRULES_dd_dirt"("LOOKUP"), 'restriction': #"SYSTEM_SYSRULES_dd_dirl"('allowedLabels': {}, 'allowedValues': {"RED", "YELLOW", "GREEN"}))}, 'outputs': {#"SYSTEM_SYSRULES_dd_do"('id': 2, 'name': "output", 'type': 'type!{http://www.appian.com/ae/types/2009}Text', 'restrictionType': #"SYSTEM_SYSRULES_dd_dort"("NONE"), 'returnListType': false)}, 'rules': {#"SYSTEM_SYSRULES_dd_dr"('id': 1, 'inputs': {#"SYSTEM_SYSRULES_dd_dri"('id': 1, 'decisionInputId': 1, 'operator': #"SYSTEM_SYSRULES_dd_dop"('operator': #"SYSTEM_SYSRULES_dd_dopt"("IN"), 'value1': {"RED"}))}, 'outputs': {#"SYSTEM_SYSRULES_dd_dro"('id': 5, 'decisionOutputId': 2, 'value': "RED")}), #"SYSTEM_SYSRULES_dd_dr"('id': 2, 'inputs': {#"SYSTEM_SYSRULES_dd_dri"('id': 3, 'decisionInputId': 1, 'operator': #"SYSTEM_SYSRULES_dd_dop"('operator': #"SYSTEM_SYSRULES_dd_dopt"("IN"), 'value1': {"YELLOW"}))}, 'outputs': {#"SYSTEM_SYSRULES_dd_dro"('id': 6, 'decisionOutputId': 2, 'value': "YELLOW")}), #"SYSTEM_SYSRULES_dd_dr"('id': 3, 'inputs': {#"SYSTEM_SYSRULES_dd_dri"('id': 5, 'decisionInputId': 1, 'operator': #"SYSTEM_SYSRULES_dd_dop"('operator': #"SYSTEM_SYSRULES_dd_dopt"("IN"), 'value1': {"GREEN"}))}, 'outputs': {#"SYSTEM_SYSRULES_dd_dro"('id': 7, 'decisionOutputId': 2, 'value': "GREEN")})}, 'isUnique': true, 'defaultOutputs': {#"SYSTEM_SYSRULES_dd_dro"('id': 2, 'decisionOutputId': 2)})),#"SYSTEM_SYSRULES_dd_exr"(decisionDefinition:local!decisiondefinition,executionInputs:{#"SYSTEM_SYSRULES_dd_dei"(decisionInputId:1,value:'ri!ScheduleCost')})))</definition>
+        <namedTypedValue>
+            <name>ScheduleCost</name>
+            <type>
+                <name>string</name>
+                <namespace>http://www.w3.org/2001/XMLSchema</namespace>
+            </type>
+            <value/>
+        </namedTypedValue>
+        <preferredEditor>legacy</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+        <inputMetadataList>
+            <inputMetadata>
+                <inputId>1</inputId>
+                <nameRef>ScheduleCost</nameRef>
+                <allowedLabelsExpr></allowedLabelsExpr>
+                <allowedValuesExpr></allowedValuesExpr>
+            </inputMetadata>
+        </inputMetadataList>
+        <outputMetadataList>
+            <outputMetadata>
+                <outputId>2</outputId>
+                <nameRef>output</nameRef>
+                <typeName>{http://www.appian.com/ae/types/2009}Text</typeName>
+            </outputMetadata>
+        </outputMetadataList>
+        <hitPolicy>UNIQUE</hitPolicy>
+    </decision>
+    <roleMap public="true">
+        <role inherit="true" allowForAll="false" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+    <history>
+        <historyInfo versionUuid="_a-0000e51b-e8fb-8000-9bb2-011c48011c48_135087"/>
+    </history>
+</contentHaul>
